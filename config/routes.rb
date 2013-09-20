@@ -1,11 +1,6 @@
 ShoppingList::Application.routes.draw do
-  get "items/index"
-  get "items/show"
-  get "items/new"
-  get "items/create"
-  get "items/update"
-  get "items/edit"
-  get "items/destroy"
+resources :items
+root "items#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

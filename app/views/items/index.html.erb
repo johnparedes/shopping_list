@@ -1,2 +1,23 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h1>All of the Things</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Item Description</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.description %></td>
+        <td><%= item.quantity  %></td>
+        <td><%= link_to "Edit", edit_item_path(item) %></td>
+        <td><%= link_to "Delete", item, method: :Delete %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "Add Item", new_item_path %></p>
+<p><%= link_to "Check out this project on GitHub!",
+"https://github.com/johnparedes/shopping_list" %></p>

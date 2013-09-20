@@ -1,0 +1,11 @@
+<%= form_for @item do |f| %>
+  <p><div class="field">
+    <%= f.label :description %><br/>
+    <%= f.text_field :description %>
+  </div></p>
+  <p><div class="field">
+    <%= f.label :quantity %><br/>
+    <%= f.number_field :quantity %>
+  </div></p>
+  <%= f.submit %>
+<% end %>
