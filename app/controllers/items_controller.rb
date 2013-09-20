@@ -1,4 +1,4 @@
-  class ItemsController < ApplicationController
+class ItemsController < ApplicationController
 
 before_action :find_item, only: %w(edit update show)
 
@@ -6,7 +6,7 @@ before_action :find_item, only: %w(edit update show)
   end
 
   def index
-    @items = Item.all
+    @items = Item.page(params[:page]).per(4)
   end
 
   def new
