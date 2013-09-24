@@ -9,8 +9,10 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.description %></td>
+        <td><%= image_tag item.item_image_name.thumb('100x100') %></td>
+        <td><%= link_to item.description, item_path(item) %></td>
         <td><%= item.quantity  %></td>
+
         <td><%= link_to "Edit", edit_item_path(item) %></td>
         <td><%= link_to "Delete", item, method: :Delete %></td>
       </tr>

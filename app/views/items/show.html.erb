@@ -1,0 +1,6 @@
+<h1><%= @item.description %></h1>
+<p>I need <%= @item.quantity %></p>
+<%= image_tag @item.item_image.url %>
+<%= image_tag @item.item_image.thumb('100x100#') %>
+<%= image_tag @item.item_image.jpg.url %>
+<%= image_tag @item.item_image.process(:greyscale).encode(:tiff).url %>
