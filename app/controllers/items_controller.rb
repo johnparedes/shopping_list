@@ -11,6 +11,7 @@ before_action :find_item, only: %w(edit update show)
 
   def new
     @item = Item.new
+    @item.item_image = @item.item_image
   end
 
   def create
@@ -49,7 +50,9 @@ before_action :find_item, only: %w(edit update show)
   end
 
   def item_params
-    params.require(:item).permit(:description, :quantity)
+    params.require(:item).permit(
+      :description, :quantity, :item_image, :item_image_url, :remove_item_image, :retained_item_image
+    )
   end
 
 end

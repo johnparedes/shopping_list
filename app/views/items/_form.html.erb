@@ -20,7 +20,7 @@
     <%= f.check_box :remove_item_image %>
   <p><div class="field">
     Image Preview
-    <%= image_tag item.item_image.thumb('100x100').url if @item.item_image_uid %><br/>
+    <%= image_tag @item.item_image.thumb('100x100').url if @item.item_image_uid %><br/>
   </div></p>
   <%= f.submit %>
   <%= f.hidden_field :retained_item_image %>

@@ -2,6 +2,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Item Description</th>
       <th>Quantity</th>
     </tr>
@@ -9,10 +10,9 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= image_tag item.item_image_name.thumb('100x100') %></td>
+        <td><%= image_tag item.item_image.thumb('100x100').url %></td>
         <td><%= link_to item.description, item_path(item) %></td>
         <td><%= item.quantity  %></td>
-
         <td><%= link_to "Edit", edit_item_path(item) %></td>
         <td><%= link_to "Delete", item, method: :Delete %></td>
       </tr>
